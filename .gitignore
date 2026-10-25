@@ -1,3 +1,7 @@
+.zed/
+.vscode/
+.vs/
+
 
 .build/
 .cache/
