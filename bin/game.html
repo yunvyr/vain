@@ -1,0 +1,26 @@
+<script>
+    var Module = {
+        print: (function () {
+            var element = document.getElementById("output");
+            if (element) element.value = ""; // Clear on load
+            return function (text) {
+                if (arguments.length > 1)
+                    text = Array.prototype.slice.call(arguments).join(" ");
+                console.log(text);
+                if (element) {
+                    element.value += text + "\n";
+                    element.scrollTop = element.scrollHeight; // Auto-scroll to bottom
+                }
+            };
+        })(),
+        canvas: (function () {
+            return document.getElementById("canvas");
+        })(),
+    };
+</script>
+<script async type="text/javascript" src="index.js"></script>
+<canvas
+    id="canvas"
+    oncontextmenu="event.preventDefault()"
+    tabindex="-1"
+></canvas>
